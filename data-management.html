@@ -250,7 +250,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="directory-structure" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Directory structure<a href="data-management.html#directory-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-management.html#cb11-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
-<span id="cb11-2"><a href="data-management.html#cb11-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;../references/daur2_rnaseq~/&quot;</span>)</span></code></pre></div>
+<span id="cb11-2"><a href="data-management.html#cb11-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;../references/daur2_rnaseq/&quot;</span>)</span></code></pre></div>
+<pre><code>## ../references/daur2_rnaseq/
+## ├── analysis
+## │   └── fastqc_HTML
+## │       ├── example_file1.html
+## │       ├── example_file2.html
+## │       └── example_file3.html
+## ├── processed_data
+## ├── raw_data
+## │   ├── bam
+## │   └── fastq
+## ├── README
+## ├── references
+## └── scripts
+##     ├── bashtest.sh
+##     ├── fastqc_mv.sh
+##     ├── fixed2c.sh
+##     ├── LEBRON.html
+##     ├── LEBRON.Rmd
+##     ├── rtest.R
+##     ├── rtest2.R
+##     ├── test.html
+##     └── test.Rmd</code></pre>
 <pre><code>### README content
 
 # DAUR2 RNA-seq Formatieve Opdracht
@@ -288,8 +310,8 @@ All paths are relative to the project root.</code></pre>
 <p>The portfolio repository itself is also organized according to Guerilla Analytics principles, ensuring that the bookdown source files, data, and output are clearly separated and documented.</p>
 <div id="directory-structure-1" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Directory structure<a href="data-management.html#directory-structure-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-management.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
-<span id="cb13-2"><a href="data-management.html#cb13-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;../&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-management.html#cb14-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
+<span id="cb14-2"><a href="data-management.html#cb14-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;../&quot;</span>)</span></code></pre></div>
 <pre><code>## ../
 ## ├── analysis
 ## ├── dsfb2_workflows_portfolio.Rproj
@@ -379,7 +401,6 @@ All paths are relative to the project root.</code></pre>
 ##     │   ├── professional-profile-future-ambitions.html
 ##     │   ├── reproducible-science.html
 ##     │   ├── search_index.json
-##     │   ├── style.css
 ##     │   ├── working-with-sql-databases.html
 ##     │   └── _main_files
 ##     │       └── figure-html
