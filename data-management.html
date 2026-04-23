@@ -23,7 +23,7 @@
 <meta name="author" content="Robin Jansen" />
 
 
-<meta name="date" content="2026-04-23" />
+<meta name="date" content="2026-04-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,7 +176,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.10" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#step-10-cell-type-annotation"><i class="fa fa-check"></i><b>2.3.10</b> Step 10 — Cell Type Annotation</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#key-tools-resources"><i class="fa fa-check"></i><b>2.4</b> Key Tools &amp; Resources</a></li>
-<li class="chapter" data-level="2.5" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#results-reflection"><i class="fa fa-check"></i><b>2.5</b> Results &amp; Reflection</a></li>
+<li class="chapter" data-level="2.5" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#using-the-pipeline-myself"><i class="fa fa-check"></i><b>2.5</b> Using the pipeline myself</a></li>
+<li class="chapter" data-level="2.6" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#results-reflection"><i class="fa fa-check"></i><b>2.6</b> Results &amp; Reflection</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>3</b> Data Management</a>
 <ul>
@@ -184,12 +185,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="data-management.html"><a href="data-management.html#a.-rna-seq-data-management-daur2"><i class="fa fa-check"></i><b>3.2</b> 3a. RNA-seq Data Management (DAUR2)</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="data-management.html"><a href="data-management.html#directory-structure"><i class="fa fa-check"></i><b>3.2.1</b> Directory structure</a></li>
-<li class="chapter" data-level="3.2.2" data-path="data-management.html"><a href="data-management.html#readme-content"><i class="fa fa-check"></i><b>3.2.2</b> README content</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="data-management.html"><a href="data-management.html#b.-portfolio-repository"><i class="fa fa-check"></i><b>3.3</b> 3b. Portfolio Repository</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="data-management.html"><a href="data-management.html#directory-structure-1"><i class="fa fa-check"></i><b>3.3.1</b> Directory structure</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data-management.html"><a href="data-management.html#readme-content-1"><i class="fa fa-check"></i><b>3.3.2</b> README content</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-management.html"><a href="data-management.html#readme-content"><i class="fa fa-check"></i><b>3.3.2</b> README content</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reproducible-science.html"><a href="reproducible-science.html"><i class="fa fa-check"></i><b>4</b> Reproducible Science</a>
@@ -250,12 +250,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="directory-structure" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Directory structure<a href="data-management.html#directory-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-management.html#cb11-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
-<span id="cb11-2"><a href="data-management.html#cb11-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;daur2_rnaseq/&quot;</span>)</span></code></pre></div>
-<p><em>(Screenshot of dir_tree output to be included here after running locally)</em></p>
-</div>
-<div id="readme-content" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> README content<a href="data-management.html#readme-content" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><em>(Screenshot of README to be included here)</em></p>
+<span id="cb11-2"><a href="data-management.html#cb11-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;../references/daur2_rnaseq~/&quot;</span>)</span></code></pre></div>
+<pre><code>### README content
+
+# DAUR2 RNA-seq Formatieve Opdracht
+
+## Project description
+This directory contains data and analysis scripts for the RNA-seq
+formatieve opdracht from the DAUR2 module (DSFB1 cursus)
+
+## Author
+Robin Jansen | robinjansentilburg@icloud.com | github.com/klefkifan55
+
+## Data origin
+Raw FASTQ files are stored in raw_data/fastq/.
+BAM files (aligned reads) are stored in raw_data/bam/.
+FastQC quality control reports are stored in analysis/fastqc_HTML/.
+
+## Directory structure
+├── analysis/
+│   └── fastqc_HTML/       → FastQC quality control HTML reports
+├── processed_data/        → cleaned/processed output files
+├── raw_data/
+│   ├── fastq/             → raw sequencing reads (do not edit)
+│   └── bam/               → aligned reads produced by pipeline
+├── references/            → reference genome and annotation files
+└── scripts/               → analysis scripts (bash and R)
+
+## How to reproduce
+Run bash scripts in order, then R scripts for downstream analysis.
+All paths are relative to the project root.</code></pre>
 <hr />
 </div>
 </div>
@@ -264,13 +288,170 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The portfolio repository itself is also organized according to Guerilla Analytics principles, ensuring that the bookdown source files, data, and output are clearly separated and documented.</p>
 <div id="directory-structure-1" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Directory structure<a href="data-management.html#directory-structure-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-management.html#cb12-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
-<span id="cb12-2"><a href="data-management.html#cb12-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;dsfb2_workflows_portfolio/&quot;</span>)</span></code></pre></div>
-<p><em>(Screenshot of dir_tree output to be included here after running locally)</em></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-management.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
+<span id="cb13-2"><a href="data-management.html#cb13-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;../&quot;</span>)</span></code></pre></div>
+<pre><code>## ../
+## ├── analysis
+## ├── dsfb2_workflows_portfolio.Rproj
+## ├── LICENSE
+## ├── processed_data
+## │   ├── CE.LIQ.FLOW.062_Tidydata.xlsx
+## │   └── filtered_gene_bc_matrices
+## │       └── hg19
+## │           ├── barcodes.tsv
+## │           ├── genes.tsv
+## │           └── matrix.mtx
+## ├── raw_data
+## ├── README
+## ├── references
+## │   └── daur2_rnaseq
+## │       ├── analysis
+## │       │   └── fastqc_HTML
+## │       │       ├── example_file1.html
+## │       │       ├── example_file2.html
+## │       │       └── example_file3.html
+## │       ├── processed_data
+## │       ├── raw_data
+## │       │   ├── bam
+## │       │   └── fastq
+## │       ├── README
+## │       ├── references
+## │       └── scripts
+## │           ├── bashtest.sh
+## │           ├── fastqc_mv.sh
+## │           ├── fixed2c.sh
+## │           ├── LEBRON.html
+## │           ├── LEBRON.Rmd
+## │           ├── rtest.R
+## │           ├── rtest2.R
+## │           ├── test.html
+## │           └── test.Rmd
+## └── scripts
+##     ├── 01-cv-future.Rmd
+##     ├── 02-free-assignment.Rmd
+##     ├── 03-data-management.Rmd
+##     ├── 04-reproducible.Rmd
+##     ├── 05-sql.Rmd
+##     ├── index.Rmd
+##     ├── portfolio_robin_jansen.Rmd
+##     ├── portfolio_robin_jansen_files
+##     │   └── figure-html
+##     │       ├── norm-scatter-1.png
+##     │       └── raw-scatter-1.png
+##     ├── references.bib
+##     ├── sql_test.R
+##     ├── _book
+##     │   ├── 404.html
+##     │   ├── data-management.html
+##     │   ├── index.html
+##     │   ├── learning-single-cell-rna-sequencing-analysis-with-seurat.html
+##     │   ├── libs
+##     │   │   ├── anchor-sections-1.1.0
+##     │   │   │   ├── anchor-sections-hash.css
+##     │   │   │   ├── anchor-sections.css
+##     │   │   │   └── anchor-sections.js
+##     │   │   ├── gitbook-2.6.7
+##     │   │   │   ├── css
+##     │   │   │   │   ├── fontawesome
+##     │   │   │   │   │   └── fontawesome-webfont.ttf
+##     │   │   │   │   ├── plugin-bookdown.css
+##     │   │   │   │   ├── plugin-clipboard.css
+##     │   │   │   │   ├── plugin-fontsettings.css
+##     │   │   │   │   ├── plugin-highlight.css
+##     │   │   │   │   ├── plugin-search.css
+##     │   │   │   │   ├── plugin-table.css
+##     │   │   │   │   └── style.css
+##     │   │   │   └── js
+##     │   │   │       ├── app.min.js
+##     │   │   │       ├── clipboard.min.js
+##     │   │   │       ├── jquery.highlight.js
+##     │   │   │       ├── plugin-bookdown.js
+##     │   │   │       ├── plugin-clipboard.js
+##     │   │   │       ├── plugin-fontsettings.js
+##     │   │   │       ├── plugin-search.js
+##     │   │   │       └── plugin-sharing.js
+##     │   │   └── jquery-3.6.0
+##     │   │       └── jquery-3.6.0.min.js
+##     │   ├── portfolio_robin_jansen_files
+##     │   │   └── figure-html
+##     │   │       ├── norm-scatter-1.png
+##     │   │       └── raw-scatter-1.png
+##     │   ├── professional-profile-future-ambitions.html
+##     │   ├── reproducible-science.html
+##     │   ├── search_index.json
+##     │   ├── style.css
+##     │   ├── working-with-sql-databases.html
+##     │   └── _main_files
+##     │       └── figure-html
+##     │           ├── norm-scatter-1.png
+##     │           └── raw-scatter-1.png
+##     ├── _bookdown.yml
+##     ├── _bookdown_files
+##     ├── _main_files
+##     │   └── figure-html
+##     │       ├── norm-scatter-1.png
+##     │       └── raw-scatter-1.png
+##     └── _output.yml</code></pre>
+<p>The output above shows the full directory structure of the portfolio repository. The key elements are:</p>
+<ul>
+<li><code>raw_data/</code> — original, unmodified input data that is never edited</li>
+<li><code>processed_data/</code> — cleaned data files and reference datasets used in analyses</li>
+<li><code>analysis/</code> — exploratory analyses and scratch work</li>
+<li><code>references/</code> — literature and reference materials</li>
+<li><code>scripts/</code> — all bookdown <code>.Rmd</code> source files and analysis scripts, including the rendered <code>_book/</code> output</li>
+</ul>
 </div>
-<div id="readme-content-1" class="section level3 hasAnchor" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> README content<a href="data-management.html#readme-content-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><em>(Screenshot of README to be included here)</em></p>
+<div id="readme-content" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> README content<a href="data-management.html#readme-content" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code># dsfb2_workflows_portfolio
+
+## Description
+Portfolio for the Workflows course (Data Science for Biology 2) at HU University 
+of Applied Sciences Utrecht. This portfolio demonstrates skills in reproducible 
+data analysis, data management, SQL, bioinformatics, and R programming.
+
+The portfolio is built with bookdown and hosted via GitHub Pages at:
+https://klefkifan55.github.io
+
+## Author
+Robin Jansen | robinjansentilburg@icloud.com | github.com/klefkifan55
+
+## Directory structure
+dsfb2_workflows_portfolio/
+├── raw_data/              → original, unmodified input data (do not edit)
+├── processed_data/        → cleaned/processed data files and reference datasets
+│   ├── CE.LIQ.FLOW.062_Tidydata.xlsx   → C. elegans toxicity data (ch. 4)
+│   └── filtered_gene_bc_matrices/      → PBMC 3k scRNA-seq data (ch. 2)
+├── analysis/              → exploratory analyses and scratch work
+├── references/            → literature and reference materials
+├── scripts/               → bookdown source files and analysis scripts
+│   ├── index.Rmd          → portfolio homepage
+│   ├── 01-cv-future.Rmd   → CV and future ambitions
+│   ├── 02-free-assignment.Rmd  → scRNA-seq analysis with Seurat
+│   ├── 03-data-management.Rmd  → data management (Guerilla Analytics)
+│   ├── 04-reproducible.Rmd     → reproducible science
+│   ├── 05-sql.Rmd              → SQL databases
+│   ├── references.bib     → BibTeX references
+│   ├── _bookdown.yml      → bookdown configuration
+│   ├── _output.yml        → output format configuration
+│   └── _book/             → rendered HTML output (do not edit manually)
+
+## How to build
+Set working directory to scripts/ and run in the R console:
+  bookdown::render_book(&#39;.&#39;)
+
+The rendered site is output to scripts/_book/.
+Copy the contents of _book/ to the klefkifan55.github.io repository and push to update the live site.
+
+## Portfolio contents (so far)
+1. CV and future ambitions
+2. Free assignment — scRNA-seq analysis with Seurat
+3. Data management
+4. Reproducible science
+
+## How to reproduce
+All analysis scripts are in scripts/ and are numbered in order of execution.
+Data files are in processed_data/. Paths in the .Rmd files are relative to the scripts/ directory.</code></pre>
 
 </div>
 </div>

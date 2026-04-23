@@ -23,7 +23,7 @@
 <meta name="author" content="Robin Jansen" />
 
 
-<meta name="date" content="2026-04-23" />
+<meta name="date" content="2026-04-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,7 +176,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.10" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#step-10-cell-type-annotation"><i class="fa fa-check"></i><b>2.3.10</b> Step 10 — Cell Type Annotation</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#key-tools-resources"><i class="fa fa-check"></i><b>2.4</b> Key Tools &amp; Resources</a></li>
-<li class="chapter" data-level="2.5" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#results-reflection"><i class="fa fa-check"></i><b>2.5</b> Results &amp; Reflection</a></li>
+<li class="chapter" data-level="2.5" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#using-the-pipeline-myself"><i class="fa fa-check"></i><b>2.5</b> Using the pipeline myself</a></li>
+<li class="chapter" data-level="2.6" data-path="learning-single-cell-rna-sequencing-analysis-with-seurat.html"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#results-reflection"><i class="fa fa-check"></i><b>2.6</b> Results &amp; Reflection</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>3</b> Data Management</a>
 <ul>
@@ -184,12 +185,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="data-management.html"><a href="data-management.html#a.-rna-seq-data-management-daur2"><i class="fa fa-check"></i><b>3.2</b> 3a. RNA-seq Data Management (DAUR2)</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="data-management.html"><a href="data-management.html#directory-structure"><i class="fa fa-check"></i><b>3.2.1</b> Directory structure</a></li>
-<li class="chapter" data-level="3.2.2" data-path="data-management.html"><a href="data-management.html#readme-content"><i class="fa fa-check"></i><b>3.2.2</b> README content</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="data-management.html"><a href="data-management.html#b.-portfolio-repository"><i class="fa fa-check"></i><b>3.3</b> 3b. Portfolio Repository</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="data-management.html"><a href="data-management.html#directory-structure-1"><i class="fa fa-check"></i><b>3.3.1</b> Directory structure</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data-management.html"><a href="data-management.html#readme-content-1"><i class="fa fa-check"></i><b>3.3.2</b> README content</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-management.html"><a href="data-management.html#readme-content"><i class="fa fa-check"></i><b>3.3.2</b> README content</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reproducible-science.html"><a href="reproducible-science.html"><i class="fa fa-check"></i><b>4</b> Reproducible Science</a>
@@ -282,7 +282,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p><strong>How will I demonstrate the skill?</strong><br />
-The output will be a fully annotated R script and a set of UMAP figures showing distinct cell populations in a self-chosen dataset. The chosen dataset will be a publicly available scRNA-seq dataset from GEO or the Human Cell Atlas — I will select one relevant to ALS or neurodegeneration to connect this skill to my broader project context.</p>
+The output will be a fully annotated R script and a set of UMAP figures showing distinct cell populations in a self-chosen dataset. The chosen dataset will be a publicly available scRNA-seq dataset. I will try to select one relevant to ALS or neurodegeneration to connect this skill to my broader project context.</p>
 <hr />
 </div>
 <div id="the-scrna-seq-pipeline-with-seurat" class="section level2 hasAnchor" number="2.3">
@@ -296,7 +296,7 @@ The output will be a fully annotated R script and a set of UMAP figures showing 
 <span id="cb1-4"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#cb1-4" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
 <span id="cb1-5"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#cb1-5" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#cb1-6" tabindex="-1"></a><span class="co"># Load the PBMC 3k dataset (available via Seurat tutorial)</span></span>
-<span id="cb1-7"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#cb1-7" tabindex="-1"></a>pbmc.data <span class="ot">&lt;-</span> <span class="fu">Read10X</span>(<span class="at">data.dir =</span> <span class="st">&quot;~/dsfb2_workflows_portfolio/data/filtered_gene_bc_matrices/hg19/&quot;</span>)</span>
+<span id="cb1-7"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#cb1-7" tabindex="-1"></a>pbmc.data <span class="ot">&lt;-</span> <span class="fu">Read10X</span>(<span class="at">data.dir =</span> <span class="st">&quot;~/dsfb2_workflows_portfolio/processed_data/filtered_gene_bc_matrices/hg19/&quot;</span>)</span>
 <span id="cb1-8"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#cb1-8" tabindex="-1"></a>pbmc <span class="ot">&lt;-</span> <span class="fu">CreateSeuratObject</span>(<span class="at">counts =</span> pbmc.data, <span class="at">project =</span> <span class="st">&quot;pbmc3k&quot;</span>,</span>
 <span id="cb1-9"><a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#cb1-9" tabindex="-1"></a>                           <span class="at">min.cells =</span> <span class="dv">3</span>, <span class="at">min.features =</span> <span class="dv">200</span>)</span></code></pre></div>
 </div>
@@ -407,15 +407,18 @@ The output will be a fully annotated R script and a set of UMAP figures showing 
 <p><strong>Good starting datasets:</strong></p>
 <ul>
 <li>PBMC 3k — classic beginner dataset, available directly via the Seurat tutorial</li>
+<li>CZ CELLxGENE — large curated collection of scRNA-seq datasets, recommended by professors — <a href="https://cellxgene.cziscience.com">cellxgene.cziscience.com</a></li>
 <li>10x Genomics public datasets — <a href="https://www.10xgenomics.com/datasets">genomics.10xgenomics.com</a></li>
 <li>GEO (Gene Expression Omnibus) — search <code>scRNA-seq</code> + disease of interest</li>
-<li>Human Cell Atlas — <a href="https://www.humancellatlas.org">humancellatlas.org</a></li>
 </ul>
 <hr />
 </div>
-<div id="results-reflection" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Results &amp; Reflection<a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#results-reflection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>(This section will be completed upon finishing the independent analysis in Phase 2. It will include the annotated UMAP plots from both the PBMC tutorial dataset and the self-chosen dataset, a comparison of cell populations identified, and a reflection on what went well and what was challenging.)</em></p>
+<div id="using-the-pipeline-myself" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Using the pipeline myself<a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#using-the-pipeline-myself" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<hr />
+</div>
+<div id="results-reflection" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Results &amp; Reflection<a href="learning-single-cell-rna-sequencing-analysis-with-seurat.html#results-reflection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>

@@ -27,15 +27,15 @@ step-8-umap-visualization
 step-9-marker-gene-identification
 step-10-cell-type-annotation
 key-tools-resources
+using-the-pipeline-myself
 results-reflection
 data-management
 the-guerilla-analytics-principles
 a.-rna-seq-data-management-daur2
 directory-structure
-readme-content
 b.-portfolio-repository
 directory-structure-1
-readme-content-1
+readme-content
 reproducible-science
 a.-reproducing-a-c.-elegans-toxicity-analysis
 background
